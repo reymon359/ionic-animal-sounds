@@ -12,7 +12,8 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
+      if (!platform.is('cordova')) document.getElementsByTagName('body')[0].setAttribute('style', 'width: 450px;margin-left: auto!important;margin-right: auto!important;position: relative;    background-color: #303030;');
+     // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
